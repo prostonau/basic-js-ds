@@ -21,18 +21,17 @@ class BinarySearchTree {
 //https://www.youtube.com/watch?v=fnqUD4FTE5Q&list=PLP-a1IHLCS7PqDf08LFIYCiTYY1CtoAkt&index=12
 
   constructor() {
-    this.root = null
+    this.root777 = null
   }
 
 
   root() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return this.root777
   }
 
   add(data) {
     
-    this.root = addToTree(this.root, data)
+    this.root777 = addToTree(this.root777, data)
 
     function addToTree (node,data){
       if(!node){
@@ -59,7 +58,7 @@ class BinarySearchTree {
 
   has(data) {
     
-    return SearchToTree(this.root,data)
+    return SearchToTree(this.root777,data)
 
     function SearchToTree(node, data) {
       if(!node){
@@ -74,14 +73,42 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
+  find(data) {
+
+    //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
+
+    // doLeft(this.root777,has(data))
+
+    // function doLeft(node, cabe) {
+    //   if(node){
+    //     doLeft(node.left,cabe)
+    //     cabe(node.data)
+    //     doLeft(node.left,cabe)
+    //   }
+    // }
+
+    // return this.root777
+
+    return SearchToTree(this.root777,data)
+
+    function SearchToTree(node, data) {
+      if(!node){
+        return null;
+      }
+
+      if(node.data === data) {
+        return node
+      }
+
+      return data < node.data ? SearchToTree(node.left, data):SearchToTree(node.right, data); 
+    }
+   
   }
 
   remove(data) {
 
-    this.root = removeNode(this.root, data)
+    this.root777 = removeNode(this.root777, data)
 
     function removeNode(node, data) {
       if(!node) {
@@ -127,11 +154,11 @@ class BinarySearchTree {
   }
 
   min() {
-   if(!this.root) {
+   if(!this.root777) {
     return
    }
 
-   let node = this.root
+   let node = this.root777
    while (node.left) {
     node = node.left
    }
@@ -142,11 +169,11 @@ class BinarySearchTree {
 
   max() {
 
-    if(!this.root) {
+    if(!this.root777) {
       return
      }
   
-     let node = this.root
+     let node = this.root777
      while (node.right) {
       node = node.right
      }
